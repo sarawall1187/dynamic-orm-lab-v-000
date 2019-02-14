@@ -50,8 +50,8 @@ class InteractiveRecord
   end
 
   def self.find_by(student_hash)
-    result =  student_hash.values.to_s
+    result =  student_hash.values[0]
     sql = "SELECT * FROM #{self.table_name} WHERE #{self.column_names} = ?"
-    DB[:conn].execute(sql, student_hash)
+    DB[:conn].execute(sql, result)
   end
 end
