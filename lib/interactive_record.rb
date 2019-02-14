@@ -52,6 +52,7 @@ class InteractiveRecord
   def self.find_by(student_hash)
     result =  student_hash.values[0]
     sql = "SELECT * FROM #{self.table_name} WHERE #{self.column_names} = ?"
+    binding.pry
     DB[:conn].execute(sql, result)
   end
 end
