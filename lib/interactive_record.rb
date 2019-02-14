@@ -53,7 +53,6 @@ class InteractiveRecord
     result =  student_hash.values[0]
     col_name = student_hash.keys[0]
     sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = ?"
-
     DB[:conn].execute(sql, result)
   end
 end
